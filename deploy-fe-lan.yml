@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fe-lantick-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: fe-lantick
+  template:
+    metadata:
+      labels:
+        app: fe-lantick
+    spec:
+      containers:
+      - name: fe-lantick
+        image: mahesaj/fe-lan:kb1
+        ports:
+        - containerPort: 5173
